@@ -31,5 +31,5 @@ employee-directory/
 │               └── index.html            # HTML template (main UI page)
 │
 └── README.md     
-
+---
 Screenshot link:- https://drive.google.com/drive/folders/1LqdtJbDIiWcZlgs98Ex7kGryuv-Oia3u?usp=sharing
