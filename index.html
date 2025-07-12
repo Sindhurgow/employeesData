@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="src/main/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!--Header with title and controls-->
+    <header>
+      <h1>Employee Directory</h1>
+      <div class="controls">
+        <input type="text" id="search-input" placeholder="Search by name or email">
+        <button type="button" onclick="UI.toggleFilterPanel()">Filter</button>
+        <button type="button" onclick="UI.showForm()">Add Employee</button>
+      </div>
+    </header>
+    <!--Sections for filter, form, and employee list-->
+    <section id="filter-panel" class="hidden">
+      <h2>Filter Employees</h2>
+      <label>Department:
+        <select id="filter-department"></select>
+
+      </label>
+      <label>Role:
+        <input type="text" id="filter-role" placeholder="e.g. Manager">
+      </label>
+      <button type="button" onclick="Filters.apply()">Apply Filter</button>
+    </section>
+    <!--Form section for adding/editing employees--> 
+    <section id="form-section" class="hidden">
+      <h2 id="form-title">Add/Edit Employee</h2>
+      <form id="employee-form">
+        <input type="hidden" id="employee-id">
+        <input type="text" id="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="department" placeholder="Department" required>
+        <input type="text" id="role" placeholder="Role" required>
+        <div class="form-actions">
+          <button type="submit">Save</button>
+          <button type="button" onclick="UI.cancelForm()">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!--Section to display the list of employees-->
+    <section id="employee-list"></section>
+    <!--Pagination footer-->
+    <footer id="pagination"></footer>
+  </div>
+
+  <script src="src/main/static/js/data.js"></script>
+  <script src="src/main/static/js/ui.js"></script>
+  <script src="src/main/static/js/filters.js"></script>
+  <script src="src/main/static/js/app.js"></script>
+</body>
+</html>
